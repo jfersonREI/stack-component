@@ -1,117 +1,123 @@
+import { useState } from "react";
 import Stack from "./components/Stack";
+import styles from "./App.module.css";
 
 function App() {
-  const buttonStyle = {
-    padding: "8px 16px",
+  const [direction, setDirection] = useState("row");
+  const [spacing, setSpacing] = useState(2);
+  const [alignItems, setAlignItems] = useState("center");
+  const [justifyContent, setJustifyContent] = useState("flex-start");
+
+  const boxStyle = {
+    width: "60px",
+    height: "60px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    fontWeight: "bold",
     borderRadius: "4px",
-    border: "1px solid #ccc",
-    background: "#f0f0f0",
   };
 
+  const codeSample = `
+<Stack
+  direction="${direction}"
+  spacing={${spacing}}
+  alignItems="${alignItems}"
+  justifyContent="${justifyContent}"
+>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</Stack>
+  `.trim();
+
   return (
-    <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>
-        Stack Component Examples
-      </h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Stack Interactive Demo</h1>
+      <p className={styles.instructions}>
+        Use the controls below to experiment with the Stack component's
+        properties.
+      </p>
 
-      {/* Example 1: Responsive Direction Switch */}
-      <div style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Example 1: Column to Row at lg
-        </h2>
+      <div className={styles.controls}>
+        <div className={styles.controlGroup}>
+          <label htmlFor="direction">Direction:</label>
+          <select
+            id="direction"
+            value={direction}
+            onChange={(e) => setDirection(e.target.value)}
+          >
+            <option value="row">Row</option>
+            <option value="column">Column</option>
+            <option value="row-reverse">Row Reverse</option>
+            <option value="column-reverse">Column Reverse</option>
+          </select>
+        </div>
+        <div className={styles.controlGroup}>
+          <label htmlFor="spacing">Spacing:</label>
+          <select
+            id="spacing"
+            value={spacing}
+            onChange={(e) => setSpacing(Number(e.target.value))}
+          >
+            <option value={0}>0 (0px)</option>
+            <option value={1}>1 (8px)</option>
+            <option value={2}>2 (16px)</option>
+            <option value={3}>3 (24px)</option>
+            <option value={4}>4 (32px)</option>
+          </select>
+        </div>
+        <div className={styles.controlGroup}>
+          <label htmlFor="alignItems">Align Items:</label>
+          <select
+            id="alignItems"
+            value={alignItems}
+            onChange={(e) => setAlignItems(e.target.value)}
+          >
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="baseline">Baseline</option>
+            <option value="stretch">Stretch</option>
+          </select>
+        </div>
+        <div className={styles.controlGroup}>
+          <label htmlFor="justifyContent">Justify Content:</label>
+          <select
+            id="justifyContent"
+            value={justifyContent}
+            onChange={(e) => setJustifyContent(e.target.value)}
+          >
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="space-between">Space Between</option>
+            <option value="space-around">Space Around</option>
+            <option value="space-evenly">Space Evenly</option>
+          </select>
+        </div>
+      </div>
+
+      <div className={styles.demoArea}>
         <Stack
-          direction={{ xs: "column", sm: "column", md: "column", lg: "row" }}
-          spacing={{ xs: 1, sm: 1, md: 2, lg: 3 }}
-          alignItems="center"
-          justifyContent="flex-start"
+          direction={direction}
+          spacing={spacing}
+          alignItems={alignItems}
+          justifyContent={justifyContent}
+          className={styles.stack}
         >
-          <button style={buttonStyle}>Button 1</button>
-          <button style={buttonStyle}>Button 2</button>
+          <div style={{ ...boxStyle, backgroundColor: "#1976d2" }}>1</div>
+          <div style={{ ...boxStyle, backgroundColor: "#388e3c" }}>2</div>
+          <div style={{ ...boxStyle, backgroundColor: "#d32f2f" }}>3</div>
         </Stack>
       </div>
 
-      {/* Example 2: Spacing Progression */}
-      <div style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Example 2: Increasing Spacing
-        </h2>
-        <Stack
-          direction="column"
-          spacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}
-          alignItems="stretch"
-          justifyContent="flex-start"
-        >
-          <button style={buttonStyle}>Button 1</button>
-          <button style={buttonStyle}>Button 2</button>
-        </Stack>
-      </div>
-
-      {/* Example 3: Alignment Variations */}
-      <div style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Example 3: Varying Alignment
-        </h2>
-        <Stack
-          direction="row"
-          spacing={{ xs: 2, sm: 2, md: 2, lg: 2 }}
-          alignItems={{
-            xs: "stretch",
-            sm: "center",
-            md: "flex-start",
-            lg: "baseline",
-          }}
-          justifyContent="center"
-        >
-          <button style={buttonStyle}>Button 1</button>
-          <button style={buttonStyle}>Button 2</button>
-        </Stack>
-      </div>
-
-      {/* Example 4: Justification Variations */}
-      <div style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Example 4: Varying Justification
-        </h2>
-        <Stack
-          direction="row"
-          spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
-          alignItems="center"
-          justifyContent={{
-            xs: "flex-start",
-            sm: "space-between",
-            md: "center",
-            lg: "space-evenly",
-          }}
-        >
-          <button style={buttonStyle}>Button 1</button>
-          <button style={buttonStyle}>Button 2</button>
-        </Stack>
-      </div>
-
-      {/* Example 5: Mixed Configuration */}
-      <div style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Example 5: Mixed Responsive Layout
-        </h2>
-        <Stack
-          direction={{ xs: "column", sm: "row", md: "column", lg: "row" }}
-          spacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}
-          alignItems={{
-            xs: "flex-start",
-            sm: "center",
-            md: "stretch",
-            lg: "flex-end",
-          }}
-          justifyContent={{
-            xs: "flex-start",
-            sm: "space-around",
-            md: "center",
-            lg: "space-between",
-          }}
-        >
-          <button style={buttonStyle}>Button 1</button>
-          <button style={buttonStyle}>Button 2</button>
-        </Stack>
+      <div className={styles.codeArea}>
+        <h2 className={styles.codeTitle}>Code Sample</h2>
+        <pre className={styles.codeBlock}>
+          <code>{codeSample}</code>
+        </pre>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import styles from "./Stack.module.css";
 
 const breakpoints = ["xs", "sm", "md", "lg"];
 
-const directionValues = ["row", "column"];
+const directionValues = ["row", "column", "row-reverse", "column-reverse"];
 const alignItemsValues = [
   "flex-start",
   "flex-end",
