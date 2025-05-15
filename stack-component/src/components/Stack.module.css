@@ -1,0 +1,255 @@
+.stack {
+  display: flex;
+}
+
+/* Direction */
+.direction-row {
+  flex-direction: row;
+}
+.direction-column {
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  [data-direction-sm="row"] {
+    flex-direction: row;
+  }
+  [data-direction-sm="column"] {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  [data-direction-md="row"] {
+    flex-direction: row;
+  }
+  [data-direction-md="column"] {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1024px) {
+  [data-direction-lg="row"] {
+    flex-direction: row;
+  }
+  [data-direction-lg="column"] {
+    flex-direction: column;
+  }
+}
+
+/* Spacing */
+.spacing-0 {
+  gap: 0;
+}
+.spacing-1 {
+  gap: 8px;
+}
+.spacing-2 {
+  gap: 16px;
+}
+.spacing-3 {
+  gap: 24px;
+}
+.spacing-4 {
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  [data-spacing-sm="0"] {
+    gap: 0;
+  }
+  [data-spacing-sm="1"] {
+    gap: 8px;
+  }
+  [data-spacing-sm="2"] {
+    gap: 16px;
+  }
+  [data-spacing-sm="3"] {
+    gap: 24px;
+  }
+  [data-spacing-sm="4"] {
+    gap: 32px;
+  }
+}
+@media (min-width: 768px) {
+  [data-spacing-md="0"] {
+    gap: 0;
+  }
+  [data-spacing-md="1"] {
+    gap: 8px;
+  }
+  [data-spacing-md="2"] {
+    gap: 16px;
+  }
+  [data-spacing-md="3"] {
+    gap: 24px;
+  }
+  [data-spacing-md="4"] {
+    gap: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  [data-spacing-lg="0"] {
+    gap: 0;
+  }
+  [data-spacing-lg="1"] {
+    gap: 8px;
+  }
+  [data-spacing-lg="2"] {
+    gap: 16px;
+  }
+  [data-spacing-lg="3"] {
+    gap: 24px;
+  }
+  [data-spacing-lg="4"] {
+    gap: 32px;
+  }
+}
+
+/* Align Items */
+.alignItems-flex-start {
+  align-items: flex-start;
+}
+.alignItems-flex-end {
+  align-items: flex-end;
+}
+.alignItems-center {
+  align-items: center;
+}
+.alignItems-baseline {
+  align-items: baseline;
+}
+.alignItems-stretch {
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  [data-alignItems-sm="flex-start"] {
+    align-items: flex-start;
+  }
+  [data-alignItems-sm="flex-end"] {
+    align-items: flex-end;
+  }
+  [data-alignItems-sm="center"] {
+    align-items: center;
+  }
+  [data-alignItems-sm="baseline"] {
+    align-items: baseline;
+  }
+  [data-alignItems-sm="stretch"] {
+    align-items: stretch;
+  }
+}
+@media (min-width: 768px) {
+  [data-alignItems-md="flex-start"] {
+    align-items: flex-start;
+  }
+  [data-alignItems-md="flex-end"] {
+    align-items: flex-end;
+  }
+  [data-alignItems-md="center"] {
+    align-items: center;
+  }
+  [data-alignItems-md="baseline"] {
+    align-items: baseline;
+  }
+  [data-alignItems-md="stretch"] {
+    align-items: stretch;
+  }
+}
+@media (min-width: 1024px) {
+  [data-alignItems-lg="flex-start"] {
+    align-items: flex-start;
+  }
+  [data-alignItems-lg="flex-end"] {
+    align-items: flex-end;
+  }
+  [data-alignItems-lg="center"] {
+    align-items: center;
+  }
+  [data-alignItems-lg="baseline"] {
+    align-items: baseline;
+  }
+  [data-alignItems-lg="stretch"] {
+    align-items: stretch;
+  }
+}
+
+/* Justify Content */
+.justifyContent-flex-start {
+  justify-content: flex-start;
+}
+.justifyContent-flex-end {
+  justify-content: flex-end;
+}
+.justifyContent-center {
+  justify-content: center;
+}
+.justifyContent-space-between {
+  justify-content: space-between;
+}
+.justifyContent-space-around {
+  justify-content: space-around;
+}
+.justifyContent-space-evenly {
+  justify-content: space-evenly;
+}
+
+@media (min-width: 640px) {
+  [data-justifyContent-sm="flex-start"] {
+    justify-content: flex-start;
+  }
+  [data-justifyContent-sm="flex-end"] {
+    justify-content: flex-end;
+  }
+  [data-justifyContent-sm="center"] {
+    justify-content: center;
+  }
+  [data-justifyContent-sm="space-between"] {
+    justify-content: space-between;
+  }
+  [data-justifyContent-sm="space-around"] {
+    justify-content: space-around;
+  }
+  [data-justifyContent-sm="space-evenly"] {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 768px) {
+  [data-justifyContent-md="flex-start"] {
+    justify-content: flex-start;
+  }
+  [data-justifyContent-md="flex-end"] {
+    justify-content: flex-end;
+  }
+  [data-justifyContent-md="center"] {
+    justify-content: center;
+  }
+  [data-justifyContent-md="space-between"] {
+    justify-content: space-between;
+  }
+  [data-justifyContent-md="space-around"] {
+    justify-content: space-around;
+  }
+  [data-justifyContent-md="space-evenly"] {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 1024px) {
+  [data-justifyContent-lg="flex-start"] {
+    justify-content: flex-start;
+  }
+  [data-justifyContent-lg="flex-end"] {
+    justify-content: flex-end;
+  }
+  [data-justifyContent-lg="center"] {
+    justify-content: center;
+  }
+  [data-justifyContent-lg="space-between"] {
+    justify-content: space-between;
+  }
+  [data-justifyContent-lg="space-around"] {
+    justify-content: space-around;
+  }
+  [data-justifyContent-lg="space-evenly"] {
+    justify-content: space-evenly;
+  }
+}
