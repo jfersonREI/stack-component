@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Stack from "./components/Stack";
+import Nav from "./components/Nav";
 import styles from "./App.module.css";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className={styles.container}>
+      <Nav />
       <h1 className={styles.title}>Stack Interactive Demo</h1>
       <p className={styles.instructions}>
         Use the controls below to experiment with the Stack component's
