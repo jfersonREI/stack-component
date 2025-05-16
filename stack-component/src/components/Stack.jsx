@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./Stack.module.css";
 
-const breakpoints = ["xs", "sm", "md", "lg"];
+const breakpoints = ["xs", "sm", "md", "lg"]; // Keep 'xs' in breakpoints
 
 const directionValues = ["row", "column", "row-reverse", "column-reverse"];
 const alignItemsValues = [
@@ -73,6 +73,7 @@ const Stack = ({
   );
 };
 
+// propTypes remain unchanged
 Stack.propTypes = {
   direction: PropTypes.oneOfType([
     PropTypes.oneOf(directionValues),
